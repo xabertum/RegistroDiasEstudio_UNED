@@ -70,6 +70,10 @@
     }
   </section>
 
+  @if (store.asignaturas().length > 0) {
+    <app-mapa-calor />
+  }
+
   @if (store.detalle(); as detalle) {
     <section class="temario">
       <header class="temario__cabecera">

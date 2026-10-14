@@ -52,6 +52,7 @@ Abrir http://localhost:4200.
 |---|---|---|
 | GET | `/api/asignaturas` | |
 | GET | `/api/asignaturas/{id}` | |
+| GET | `/api/actividad` | Apartados estudiados por día y asignatura (mapa de calor) |
 | PATCH | `/api/asignaturas/{id}/semana` | `{"semana": 1 \| 2}` |
 | PATCH | `/api/temas/{id}` | `{"estudiado": true \| false}` |
 

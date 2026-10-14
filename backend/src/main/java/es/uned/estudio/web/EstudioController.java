@@ -1,6 +1,7 @@
 package es.uned.estudio.web;
 
 import es.uned.estudio.service.EstudioService;
+import es.uned.estudio.web.Dtos.ActividadDia;
 import es.uned.estudio.web.Dtos.AsignaturaDetalle;
 import es.uned.estudio.web.Dtos.AsignaturaResumen;
 import es.uned.estudio.web.Dtos.CambioEstudiado;
@@ -33,6 +34,11 @@ public class EstudioController {
     @GetMapping("/asignaturas/{id}")
     public AsignaturaDetalle asignatura(@PathVariable Long id) {
         return service.detalle(id);
+    }
+
+    @GetMapping("/actividad")
+    public List<ActividadDia> actividad() {
+        return service.actividad();
     }
 
     @PatchMapping("/asignaturas/{id}/semana")

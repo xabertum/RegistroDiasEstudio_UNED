@@ -4,6 +4,7 @@ import es.uned.estudio.model.Asignatura;
 import es.uned.estudio.model.Tema;
 import es.uned.estudio.repository.AsignaturaRepository;
 import es.uned.estudio.repository.TemaRepository;
+import es.uned.estudio.web.Dtos.ActividadDia;
 import es.uned.estudio.web.Dtos.AsignaturaDetalle;
 import es.uned.estudio.web.Dtos.AsignaturaResumen;
 import es.uned.estudio.web.Dtos.TemaNodo;
@@ -46,6 +47,20 @@ public class EstudioService {
 
     public AsignaturaDetalle detalle(Long asignaturaId) {
         return temario(buscarAsignatura(asignaturaId)).detalle();
+    }
+
+    /** Apartados estudiados cada día por asignatura; cuenta las hojas del temario según su fecha de estudio. */
+    public List<ActividadDia> actividad() {
+        List<ActividadDia> dias = new ArrayList<>();
+        for (Asignatura asignatura : asignaturas.findAll()) {
+            Temario temario = temario(asignatura);
+            temario.porId.values().stream()
+                    .filter(t -> t.isEstudiado() && t.getFechaEstudiado() != null && temario.hijosDe(t).isEmpty())
+                    .collect(Collectors.groupingBy(Tema::getFechaEstudiado, Collectors.counting()))
+                    .forEach((fecha, n) -> dias.add(new ActividadDia(fecha, asignatura.getId(), n.intValue())));
+        }
+        dias.sort(Comparator.comparing(ActividadDia::fecha).thenComparing(ActividadDia::asignaturaId));
+        return dias;
     }
 
     @Transactional

@@ -2,11 +2,12 @@ import { DatePipe, DecimalPipe } from '@angular/common';
 import { Component, OnInit, computed, inject } from '@angular/core';
 import { AsignaturaResumen } from './estudio.models';
 import { EstudioStore } from './estudio.store';
+import { MapaCalorComponent } from './mapa-calor/mapa-calor';
 import { TemaNodoComponent } from './tema-nodo/tema-nodo';
 
 @Component({
   selector: 'app-root',
-  imports: [DatePipe, DecimalPipe, TemaNodoComponent],
+  imports: [DatePipe, DecimalPipe, MapaCalorComponent, TemaNodoComponent],
   templateUrl: './app.html',
 })
 export class App implements OnInit {

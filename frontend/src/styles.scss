@@ -376,3 +376,172 @@ app-tema-nodo {
     background: var(--hecho);
   }
 }
+
+/* Mapa de calor: rampa de un solo tono, del verde UNED (validada como ordinal sobre blanco) */
+.actividad {
+  --calor-0: #e8edf2;
+  --calor-1: #7fc4a4;
+  --calor-2: #3d9b76;
+  --calor-3: #0b7a5c;
+  --calor-4: #00533e;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border-radius: var(--radio);
+  background: var(--superficie);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
+}
+
+.actividad__cabecera {
+  margin-bottom: 0.75rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0.25rem 0 0;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+  }
+}
+
+.mapa {
+  overflow-x: auto;
+  padding: 0.25rem 0.25rem 0.5rem;
+}
+
+/* Las celdas crecen con el ancho disponible hasta ~30px; en pantallas estrechas el mapa hace scroll */
+.mapa__lienzo {
+  display: grid;
+  grid-template-columns: auto repeat(var(--semanas), minmax(12px, 1fr));
+  gap: 4px;
+  max-width: calc(var(--semanas) * 34px + 2.5rem);
+}
+
+.mapa__mes {
+  grid-row: 1;
+  width: 0;
+  overflow: visible;
+  color: var(--texto-suave);
+  font-size: 0.75rem;
+  white-space: nowrap;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.mapa__dia-semana {
+  grid-column: 1;
+  padding-right: 0.4rem;
+  color: var(--texto-suave);
+  font-size: 0.7rem;
+  align-self: center;
+}
+
+.mapa__celda {
+  aspect-ratio: 1;
+}
+
+.mapa__muestra {
+  width: 12px;
+  height: 12px;
+}
+
+.mapa__celda,
+.mapa__muestra {
+  border-radius: 3px;
+  background: var(--calor-0);
+
+  &[data-nivel='1'] { background: var(--calor-1); }
+  &[data-nivel='2'] { background: var(--calor-2); }
+  &[data-nivel='3'] { background: var(--calor-3); }
+  &[data-nivel='4'] { background: var(--calor-4); }
+
+  &[data-examen] {
+    outline: 2px solid var(--acento-0);
+    outline-offset: 1px;
+  }
+
+  &[data-examen='1'] {
+    outline-color: var(--acento-1);
+  }
+}
+
+.mapa__celda--hoy {
+  outline: 2px solid var(--texto);
+  outline-offset: 1px;
+}
+
+.mapa__tooltip {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  max-width: 18rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 6px;
+  background: var(--texto);
+  color: #fff;
+  font-size: 0.8rem;
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 8px));
+
+  strong::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.mapa__tooltip-examen {
+  font-weight: 600;
+}
+
+.mapa__leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-top: 0.5rem;
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+}
+
+.mapa__escala {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+
+  .mapa__muestra {
+    margin-left: 0.3rem;
+  }
+}
+
+.mapa__tabla {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+
+  summary {
+    color: var(--texto-suave);
+    cursor: pointer;
+  }
+
+  table {
+    margin-top: 0.5rem;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 0.25rem 1rem 0.25rem 0;
+    border-bottom: 1px solid var(--borde);
+    text-align: left;
+  }
+
+  td:last-child {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+}

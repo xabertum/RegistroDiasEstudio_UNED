@@ -1,5 +1,6 @@
 package es.uned.estudio.service;
 
+import es.uned.estudio.web.Dtos.ActividadDia;
 import es.uned.estudio.web.Dtos.AsignaturaDetalle;
 import es.uned.estudio.web.Dtos.AsignaturaResumen;
 import es.uned.estudio.web.Dtos.TemaNodo;
@@ -97,6 +98,21 @@ class EstudioServiceTest {
 
         assertThat(tras.temario().get(0).hijos().get(3).estudiado()).isTrue();
         assertThat(tras.temario().get(0).estudiado()).isFalse();
+    }
+
+    @Test
+    void laActividadCuentaLosApartadosEstudiadosCadaDia() {
+        assertThat(service.actividad()).isEmpty();
+
+        TemaNodo tema3 = temaDeGrupos(2);
+        service.marcarTema(tema3.id(), true);
+
+        List<ActividadDia> actividad = service.actividad();
+        assertThat(actividad).singleElement().satisfies(d -> {
+            assertThat(d.fecha()).isEqualTo(LocalDate.of(2026, 10, 14));
+            assertThat(d.asignaturaId()).isEqualTo(service.listar().get(1).id());
+            assertThat(d.apartados()).isEqualTo(tema3.totalApartados());
+        });
     }
 
     private TemaNodo temaDeGrupos(int indice) {

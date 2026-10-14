@@ -40,6 +40,10 @@ public final class Dtos {
     public record AsignaturaDetalle(AsignaturaResumen resumen, List<TemaNodo> temario) {
     }
 
+    /** Apartados (hojas del temario) de una asignatura marcados como estudiados en un día. */
+    public record ActividadDia(LocalDate fecha, Long asignaturaId, int apartados) {
+    }
+
     public record CambioSemana(@NotNull @Min(1) @Max(2) Integer semana) {
     }
 

@@ -1,0 +1,89 @@
+<section class="actividad" aria-labelledby="actividad-titulo">
+  <header class="actividad__cabecera">
+    <h2 id="actividad-titulo">Actividad hasta el examen</h2>
+    <p>
+      {{ resumen().apartados }} {{ resumen().apartados === 1 ? 'apartado estudiado' : 'apartados estudiados' }}
+      en {{ resumen().dias }} {{ resumen().dias === 1 ? 'día' : 'días' }} desde el {{ inicio() | date: "d 'de' MMMM" }}
+    </p>
+  </header>
+
+  <div class="mapa">
+    <div class="mapa__lienzo" role="img" [style.--semanas]="semanas().length"
+         [attr.aria-label]="'Calendario de actividad: ' + resumen().apartados + ' apartados estudiados en ' + resumen().dias + ' días. Detalle en la tabla.'">
+      @for (semana of semanas(); track $index) {
+        <span class="mapa__mes" aria-hidden="true" [style.grid-column]="$index + 2">
+          {{ semana.mes ? (semana.mes | date: 'MMM') : '' }}
+        </span>
+      }
+      @for (dia of diasSemana; track $index) {
+        <span class="mapa__dia-semana" aria-hidden="true" [style.grid-row]="$index + 2">{{ dia }}</span>
+      }
+      @for (semana of semanas(); track $index; let s = $index) {
+        @for (celda of semana.dias; track $index; let d = $index) {
+          @if (celda) {
+            <span class="mapa__celda" aria-hidden="true" [attr.data-nivel]="celda.nivel"
+                  [attr.data-examen]="celda.examenes.length ? celda.examenes[0].color : null"
+                  [class.mapa__celda--hoy]="celda.hoy"
+                  [style.grid-column]="s + 2" [style.grid-row]="d + 2"
+                  (mouseenter)="mostrar(celda, $event)" (mouseleave)="ocultar()"></span>
+          }
+        }
+      }
+    </div>
+  </div>
+
+  @if (tooltip(); as t) {
+    <div class="mapa__tooltip" role="tooltip" [style.left.px]="t.x" [style.top.px]="t.y">
+      <strong>{{ t.celda.fecha | date: "EEEE d 'de' MMMM" }}</strong>
+      @for (e of t.celda.examenes; track e.nombre) {
+        <span class="mapa__tooltip-examen">Examen de {{ e.nombre }}</span>
+      }
+      @if (t.celda.apartados === 0) {
+        <span>Sin apartados estudiados</span>
+      } @else {
+        @for (a of t.celda.porAsignatura; track a.nombre) {
+          <span>{{ a.nombre }}: {{ a.apartados }} {{ a.apartados === 1 ? 'apartado' : 'apartados' }}</span>
+        }
+      }
+    </div>
+  }
+
+  <footer class="mapa__leyenda">
+    <div class="mapa__escala">
+      <span>Apartados al día:</span>
+      <span class="mapa__muestra" data-nivel="0"></span><span>0</span>
+      @for (n of niveles; track n.texto; let i = $index) {
+        <span class="mapa__muestra" [attr.data-nivel]="i + 1"></span><span>{{ n.texto }}</span>
+      }
+    </div>
+    <div class="mapa__escala">
+      <span class="mapa__muestra mapa__celda--hoy" data-nivel="0"></span><span>Hoy</span>
+      @for (a of asignaturas(); track a.id) {
+        <span class="mapa__muestra" data-nivel="0" [attr.data-examen]="a.color"></span>
+        <span>Examen de {{ a.nombre }}</span>
+      }
+    </div>
+  </footer>
+
+  <details class="mapa__tabla">
+    <summary>Ver como tabla</summary>
+    @if (filas().length === 0) {
+      <p>Todavía no hay apartados estudiados en este periodo.</p>
+    } @else {
+      <table>
+        <thead>
+          <tr><th scope="col">Día</th><th scope="col">Asignatura</th><th scope="col">Apartados</th></tr>
+        </thead>
+        <tbody>
+          @for (f of filas(); track $index) {
+            <tr>
+              <td>{{ f.fecha | date: 'EEE d MMM' }}</td>
+              <td>{{ f.nombre }}</td>
+              <td>{{ f.apartados }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </details>
+</section>

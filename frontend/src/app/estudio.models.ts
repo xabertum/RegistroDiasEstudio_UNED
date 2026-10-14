@@ -26,3 +26,10 @@ export interface AsignaturaDetalle {
   resumen: AsignaturaResumen;
   temario: TemaNodo[];
 }
+
+/** Apartados de una asignatura marcados como estudiados en un día (fecha en formato yyyy-MM-dd). */
+export interface ActividadDia {
+  fecha: string;
+  asignaturaId: number;
+  apartados: number;
+}

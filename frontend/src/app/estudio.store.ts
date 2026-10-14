@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { AsignaturaDetalle, AsignaturaResumen } from './estudio.models';
+import { ActividadDia, AsignaturaDetalle, AsignaturaResumen } from './estudio.models';
 
 @Injectable({ providedIn: 'root' })
 export class EstudioStore {
@@ -9,6 +9,7 @@ export class EstudioStore {
 
   readonly asignaturas = signal<AsignaturaResumen[]>([]);
   readonly detalle = signal<AsignaturaDetalle | null>(null);
+  readonly actividad = signal<ActividadDia[]>([]);
   readonly guardando = signal(false);
   readonly error = signal<string | null>(null);
   /** Última orden de "expandir/contraer todo"; cada nodo del árbol la aplica a su estado local. */
@@ -18,6 +19,7 @@ export class EstudioStore {
     await this.ejecutar(async () => {
       const lista = await firstValueFrom(this.http.get<AsignaturaResumen[]>('/api/asignaturas'));
       this.asignaturas.set(lista);
+      await this.cargarActividad();
       if (!this.detalle() && lista.length > 0) {
         await this.seleccionar(lista[0].id);
       }
@@ -37,6 +39,7 @@ export class EstudioStore {
       );
       this.detalle.set(detalle);
       this.reemplazarResumen(detalle.resumen);
+      await this.cargarActividad();
     });
   }
 
@@ -56,6 +59,10 @@ export class EstudioStore {
 
   private reemplazarResumen(resumen: AsignaturaResumen): void {
     this.asignaturas.update((lista) => lista.map((a) => (a.id === resumen.id ? resumen : a)));
+  }
+
+  private async cargarActividad(): Promise<void> {
+    this.actividad.set(await firstValueFrom(this.http.get<ActividadDia[]>('/api/actividad')));
   }
 
   private async ejecutar(accion: () => Promise<void>): Promise<void> {
