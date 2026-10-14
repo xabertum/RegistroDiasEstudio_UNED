@@ -1,0 +1,93 @@
+<header class="cabecera">
+  <div class="cabecera__marca">
+    <img class="cabecera__logo" src="escudo-uned.png" alt="Escudo de la UNED" width="64" height="64">
+    <div>
+      <h1>Registro de estudio</h1>
+      <p>Grado en Psicología · UNED · Convocatoria de febrero 2026/2027</p>
+    </div>
+  </div>
+  <span class="cabecera__hoy">Hoy: {{ hoy | date: "EEEE d 'de' MMMM 'de' y" }}</span>
+</header>
+
+<main class="contenido">
+  @if (store.error(); as error) {
+    <p class="aviso" role="alert">{{ error }}</p>
+  }
+
+  <section class="tarjetas">
+    @for (a of store.asignaturas(); track a.id; let i = $index) {
+      <article class="tarjeta" [class.tarjeta--activa]="a.id === seleccionadaId()" [attr.data-color]="i % 2"
+               tabindex="0" (click)="store.seleccionar(a.id)" (keydown.enter)="store.seleccionar(a.id)">
+        <header class="tarjeta__cabecera">
+          <h2>{{ a.nombre }}</h2>
+          <span class="tarjeta__codigo">{{ a.codigo }}</span>
+        </header>
+
+        <div class="cuenta-atras">
+          @if (a.diasRestantes > 1) {
+            <span class="cuenta-atras__numero">{{ a.diasRestantes }}</span>
+            <span class="cuenta-atras__texto">días para el examen</span>
+          } @else {
+            <span class="cuenta-atras__texto cuenta-atras__texto--grande">{{ textoDias(a.diasRestantes) }}</span>
+          }
+        </div>
+        @if (a.diasRestantes >= 7) {
+          <p class="cuenta-atras__semanas">{{ textoSemanas(a.diasRestantes) }}</p>
+        }
+        @if (textoMeses(a.fechaExamen); as meses) {
+          <p class="cuenta-atras__semanas">{{ meses }}</p>
+        }
+        <p class="tarjeta__fecha">{{ a.fechaExamen | date: "EEEE d 'de' MMMM 'de' y, HH:mm" }} · Valdepeñas</p>
+
+        <div class="semanas" role="group" aria-label="Semana de examen" (click)="$event.stopPropagation()">
+          <button type="button" [class.activa]="a.semanaElegida === 1" [disabled]="store.guardando()"
+                  (click)="store.cambiarSemana(a.id, 1)">
+            1ª semana <small>{{ a.examenSemana1 | date: 'EEE d MMM, HH:mm' }}</small>
+          </button>
+          <button type="button" [class.activa]="a.semanaElegida === 2" [disabled]="store.guardando()"
+                  (click)="store.cambiarSemana(a.id, 2)">
+            2ª semana <small>{{ a.examenSemana2 | date: 'EEE d MMM, HH:mm' }}</small>
+          </button>
+        </div>
+
+        <div class="progreso">
+          <div class="progreso__texto">
+            <span>{{ a.apartadosEstudiados }} de {{ a.totalApartados }} apartados estudiados</span>
+            <strong>{{ porcentaje(a) }}%</strong>
+          </div>
+          <div class="barra"><div class="barra__relleno" [style.width.%]="porcentaje(a)"></div></div>
+          @if (a.diasRestantes > 0 && a.apartadosEstudiados < a.totalApartados) {
+            <p class="progreso__ritmo">
+              Ritmo necesario: ~{{ ritmoSemanal(a) | number: '1.0-1' }} apartados por semana
+            </p>
+          }
+        </div>
+      </article>
+    } @empty {
+      @if (!store.error()) {
+        <p class="cargando">Cargando asignaturas…</p>
+      }
+    }
+  </section>
+
+  @if (store.detalle(); as detalle) {
+    <section class="temario">
+      <header class="temario__cabecera">
+        <div>
+          <h2>Temario · {{ detalle.resumen.nombre }}</h2>
+          <p class="temario__libro">{{ detalle.resumen.libro }}</p>
+        </div>
+        <div class="temario__acciones">
+          <button type="button" (click)="store.plegarTodo(true)">Expandir todo</button>
+          <button type="button" (click)="store.plegarTodo(false)">Contraer todo</button>
+        </div>
+      </header>
+
+      <div class="arbol">
+        @for (tema of detalle.temario; track tema.id) {
+          <app-tema-nodo [nodo]="tema" />
+        }
+      </div>
+    </section>
+  }
+</main>

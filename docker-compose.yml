@@ -1,0 +1,17 @@
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      TZ: Europe/Madrid
+    volumes:
+      # Misma carpeta que usa el backend en local, para conservar el progreso
+      - ./backend/data:/app/data
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${PUERTO:-8088}:80"

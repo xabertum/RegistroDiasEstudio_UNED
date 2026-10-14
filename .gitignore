@@ -1,0 +1,20 @@
+# Dependencias
+node_modules/
+
+# Compilados
+frontend/dist/
+frontend/.angular/
+backend/target/
+
+# Base de datos local con el progreso de estudio
+backend/data/
+*.mv.db
+*.lock.db
+*.trace.db
+
+# Editores y sistema
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

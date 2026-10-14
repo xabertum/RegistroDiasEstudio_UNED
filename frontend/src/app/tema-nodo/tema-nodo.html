@@ -1,0 +1,34 @@
+<div class="nodo" [class.nodo--hecho]="nodo().estudiado" [class.nodo--raiz]="nivel() === 0"
+     [style.padding-left.rem]="nivel() * 1.5">
+  @if (tieneHijos()) {
+    <button type="button" class="nodo__plegar" [class.nodo__plegar--abierto]="abierto()"
+            [attr.aria-expanded]="abierto()" [attr.aria-label]="abierto() ? 'Contraer' : 'Expandir'"
+            (click)="abierto.set(!abierto())">▸</button>
+  } @else {
+    <span class="nodo__plegar nodo__plegar--hueco"></span>
+  }
+
+  <label class="nodo__etiqueta">
+    <input type="checkbox" [checked]="nodo().estudiado" [indeterminate]="parcial()"
+           [disabled]="store.guardando()" (change)="marcar($event)" />
+    <span class="nodo__titulo">{{ nodo().titulo }}</span>
+  </label>
+
+  @if (nodo().estudiado && nodo().fechaEstudiado) {
+    <span class="nodo__fecha" title="Fecha en que se marcó como estudiado">
+      {{ nodo().fechaEstudiado | date: 'd MMM' }}
+    </span>
+  }
+  @if (tieneHijos()) {
+    <span class="nodo__progreso" [title]="porcentaje() + '% estudiado'">
+      <span class="barra barra--mini"><span class="barra__relleno" [style.width.%]="porcentaje()"></span></span>
+      {{ nodo().apartadosEstudiados }}/{{ nodo().totalApartados }}
+    </span>
+  }
+</div>
+
+@if (tieneHijos() && abierto()) {
+  @for (hijo of nodo().hijos; track hijo.id) {
+    <app-tema-nodo [nodo]="hijo" [nivel]="nivel() + 1" />
+  }
+}
