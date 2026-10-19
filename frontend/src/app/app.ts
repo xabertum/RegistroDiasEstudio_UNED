@@ -1,22 +1,44 @@
 import { DatePipe, DecimalPipe } from '@angular/common';
-import { Component, OnInit, computed, inject } from '@angular/core';
+import { Component, OnInit, computed, effect, inject, untracked } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AsignaturaResumen } from './estudio.models';
 import { EstudioStore } from './estudio.store';
 import { MapaCalorComponent } from './mapa-calor/mapa-calor';
 import { TemaNodoComponent } from './tema-nodo/tema-nodo';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
-  imports: [DatePipe, DecimalPipe, MapaCalorComponent, TemaNodoComponent],
+  imports: [DatePipe, DecimalPipe, FormsModule, MapaCalorComponent, TemaNodoComponent],
   templateUrl: './app.html',
 })
 export class App implements OnInit {
   protected readonly store = inject(EstudioStore);
+  protected readonly auth = inject(AuthService);
+  protected email = '';
+  protected password = '';
   protected readonly hoy = new Date();
   protected readonly seleccionadaId = computed(() => this.store.detalle()?.resumen.id ?? null);
 
+  constructor() {
+    effect(() => {
+      const ready = this.auth.ready();
+      const userId = this.auth.user()?.id;
+      if (!ready) return;
+      untracked(() => {
+        this.store.limpiar();
+        if (!this.auth.cloud || userId) void this.store.cargar();
+      });
+    });
+  }
+
   ngOnInit(): void {
-    this.store.cargar();
+    void this.auth.initialize();
+  }
+
+  protected async login(): Promise<void> {
+    await this.auth.login(this.email.trim(), this.password);
+    this.password = '';
   }
 
   protected porcentaje(a: AsignaturaResumen): number {
