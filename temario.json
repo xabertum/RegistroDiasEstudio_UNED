@@ -1,0 +1,344 @@
+[
+  {
+    "codigo": "69011017",
+    "nombre": "Introducción a la Sociología",
+    "libro": "Díaz Martínez, J. A. y Rodríguez Rodríguez, R. M. (2022). Introducción a la Sociología actual para Ciencias Sociales. UNED.",
+    "examenSemana1": "2027-01-26T11:30:00",
+    "examenSemana2": "2027-02-09T18:30:00",
+    "temas": [
+      { "titulo": "Tema 1. La perspectiva sociológica: su naturaleza e institucionalización", "hijos": [
+        { "titulo": "1.1. ¿Qué es la Sociología y cómo se explican los fenómenos sociales?" },
+        { "titulo": "1.2. Los orígenes de la Sociología: un esbozo histórico" },
+        { "titulo": "1.3. Lo social, la cuestión social, inicio del estudio de los problemas sociales" },
+        { "titulo": "1.4. Objeto y finalidad de la Sociología" },
+        { "titulo": "1.5. La institucionalización de la Sociología", "hijos": [
+          { "titulo": "1.5.1. Precursores de los estudios sociológicos en España" },
+          { "titulo": "1.5.2. Referencias del pensamiento sociológico del siglo XX en España" }
+        ]}
+      ]},
+      { "titulo": "Tema 2. Teorías sociológicas", "hijos": [
+        { "titulo": "2.1. Gestación teórica de la Sociología", "hijos": [
+          { "titulo": "2.1.1. Positivismo (A. Comte)" },
+          { "titulo": "2.1.2. Evolucionismo y organicismo (H. Spencer)" }
+        ]},
+        { "titulo": "2.2. Consolidación de la Sociología", "hijos": [
+          { "titulo": "2.2.1. Los inicios de la Sociología analítica (F. Tönnies, G. Simmel y E. Durkheim)" },
+          { "titulo": "2.2.2. Sociología comprensivo-explicativa (M. Weber)" },
+          { "titulo": "2.2.3. Sociología dialéctica (K. Marx)" }
+        ]},
+        { "titulo": "2.3. Principales perspectivas teóricas contemporáneas", "hijos": [
+          { "titulo": "2.3.1. Estructural-funcionalista (T. Parsons)" },
+          { "titulo": "2.3.2. Teoría crítica" },
+          { "titulo": "2.3.3. Interaccionismo o interaccionismo simbólico" }
+        ]},
+        { "titulo": "2.4. El «multiverso teórico» de la Sociología actual" }
+      ]},
+      { "titulo": "Tema 3. La Sociología como disciplina científica", "hijos": [
+        { "titulo": "3.1. El método de investigación de las Ciencias Sociales", "hijos": [
+          { "titulo": "3.1.1. La objetividad en las Ciencias Sociales" },
+          { "titulo": "3.1.2. Las reglas del método sociológico de Durkheim" }
+        ]},
+        { "titulo": "3.2. Fases del proceso de investigación", "hijos": [
+          { "titulo": "3.2.1. Definición del problema" },
+          { "titulo": "3.2.2. Marco teórico: revisión bibliográfica" },
+          { "titulo": "3.2.3. Formulación de las hipótesis de investigación" },
+          { "titulo": "3.2.4. Técnicas de investigación" },
+          { "titulo": "3.2.5. Trabajo de campo: recopilación y análisis de datos" },
+          { "titulo": "3.2.6. Conclusiones" }
+        ]},
+        { "titulo": "3.3. Retos actuales del análisis sociológico" }
+      ]},
+      { "titulo": "Tema 4. Sociedad, individuo y cultura", "hijos": [
+        { "titulo": "4.1. Introduciendo los conceptos: la sociedad, el individuo y la cultura" },
+        { "titulo": "4.2. El enfoque de los hechos sociales" },
+        { "titulo": "4.3. El enfoque de la definición social" },
+        { "titulo": "4.4. Descubrimientos críticos de la Sociología sobre la realidad social" },
+        { "titulo": "4.5. El constructivismo social" },
+        { "titulo": "4.6. El espacio social" },
+        { "titulo": "4.7. El sujeto" },
+        { "titulo": "4.8. Las configuraciones sociales" }
+      ]},
+      { "titulo": "Tema 5. El proceso de socialización y la formación de la personalidad", "hijos": [
+        { "titulo": "5.1. El proceso de socialización" },
+        { "titulo": "5.2. Tipos de socialización" },
+        { "titulo": "5.3. Agentes de socialización" },
+        { "titulo": "5.4. Los mecanismos de socialización" },
+        { "titulo": "5.5. La formación de la personalidad" }
+      ]},
+      { "titulo": "Tema 6. Desviación social, delito y control social", "hijos": [
+        { "titulo": "6.1. ¿Qué es la desviación social?" },
+        { "titulo": "6.2. Tipos de desviación social" },
+        { "titulo": "6.3. Teorías generales sobre la violencia basadas en la fisiología y la frenología", "hijos": [
+          { "titulo": "6.3.1. La Escuela Clásica" },
+          { "titulo": "6.3.2. La Escuela Positivista" }
+        ]},
+        { "titulo": "6.4. Teorías sociológicas sobre la desviación y la delincuencia", "hijos": [
+          { "titulo": "6.4.1. Teoría de la Ecología Humana" },
+          { "titulo": "6.4.2. Las teorías funcionalistas: la anomia" },
+          { "titulo": "6.4.3. El interaccionismo: etiquetaje y teorías de la transmisión cultural" },
+          { "titulo": "6.4.4. La nueva Criminología y las teorías del conflicto" }
+        ]}
+      ]},
+      { "titulo": "Tema 7. Conflicto social y violencia", "hijos": [
+        { "titulo": "7.1. Conflicto social y violencia organizada" },
+        { "titulo": "7.2. El orden, el conflicto y la violencia en el pensamiento sociológico", "hijos": [
+          { "titulo": "7.2.1. La tradición funcionalista y las teorías del comportamiento colectivo" },
+          { "titulo": "7.2.2. La tradición marxista del conflicto y la violencia" },
+          { "titulo": "7.2.3. La tradición organizacional en el estudio del conflicto" },
+          { "titulo": "7.2.4. Las teorías de los movimientos sociales" }
+        ]},
+        { "titulo": "7.3. Expresiones del conflicto y formas de violencia organizada: surgimiento, evolución y postconflicto", "hijos": [
+          { "titulo": "7.3.1. Terrorismo e insurgencias" },
+          { "titulo": "7.3.2. Revoluciones" },
+          { "titulo": "7.3.3. Resistencia pacífica y no-violencia" },
+          { "titulo": "7.3.4. Genocidio" },
+          { "titulo": "7.3.5. Viejas y nuevas guerras" },
+          { "titulo": "7.3.6. Posconflicto y resiliencia" }
+        ]},
+        { "titulo": "7.4. Nuevos desafíos, cambio social y violencia en el siglo XXI" }
+      ]},
+      { "titulo": "Tema 8. Los movimientos sociales", "hijos": [
+        { "titulo": "8.1. Definiciones, conceptos y teorías sobre los movimientos sociales", "hijos": [
+          { "titulo": "8.1.1. El concepto de movimiento social" },
+          { "titulo": "8.1.2. Teorías sobre asociacionismo y movimientos sociales" }
+        ]},
+        { "titulo": "8.2. Introducción histórica: las olas o grandes fases de los movimientos sociales. Tipologías", "hijos": [
+          { "titulo": "8.2.1. El movimiento obrero" },
+          { "titulo": "8.2.2. Los nuevos movimientos sociales: Mayo del 68, pacifismo, ecologismo, feminismo" },
+          { "titulo": "8.2.3. Globalización y movimientos altermundialización" }
+        ]},
+        { "titulo": "8.3. Los movimientos ciudadanos en España" },
+        { "titulo": "8.4. Movimientos de indignados, 15M y mareas ciudadanas (segunda década del s. XXI)" }
+      ]},
+      { "titulo": "Tema 9. Globalización y cambio social", "hijos": [
+        { "titulo": "9.1. Concepto de cambio social. Agentes y factores de cambio social" },
+        { "titulo": "9.2. Fases del sistema capitalista. El nacimiento del capitalismo de consumo" },
+        { "titulo": "9.3. La globalización. Sociedad de servicios y de la información en el capitalismo financiero-especulativo", "hijos": [
+          { "titulo": "9.3.1. Estado de Bienestar y crisis" },
+          { "titulo": "9.3.2. El capitalismo del siglo XXI" }
+        ]},
+        { "titulo": "9.4. Migraciones internacionales en la era de la globalización" }
+      ]},
+      { "titulo": "Tema 10. Tecnología y sociedad del conocimiento", "hijos": [
+        { "titulo": "10.1. El cambio sociotécnico" },
+        { "titulo": "10.2. Relación entre cambio tecnológico y sociedad", "hijos": [
+          { "titulo": "10.2.1. Neutralidad y motores de la innovación tecnológica" }
+        ]},
+        { "titulo": "10.3. Sociología prospectiva: el estudio del futuro de la sociedad" },
+        { "titulo": "10.4. La brecha digital y la inclusión social" }
+      ]},
+      { "titulo": "Tema 11. Desigualdad, pobreza y exclusión social", "hijos": [
+        { "titulo": "11.1. Introducción. Sociedades tecnológicas avanzadas y desigualdad social" },
+        { "titulo": "11.2. Teorías sociológicas sobre la pobreza" },
+        { "titulo": "11.3. La noción de exclusión social" },
+        { "titulo": "11.4. La perspectiva de la ciudadanía" },
+        { "titulo": "11.5. Formas de medición de la pobreza y la exclusión social" },
+        { "titulo": "11.6. Los procesos hacia la exclusión social" },
+        { "titulo": "11.7. La fisonomía de la exclusión social en España" },
+        { "titulo": "11.8. Las personas «sin hogar»: un caso extremo de exclusión social" }
+      ]}
+    ]
+  },
+  {
+    "codigo": "62013065",
+    "nombre": "Psicología de los Grupos",
+    "libro": "Molero, F.; Lois, D.; García-Ael, C. y Gómez, A. (eds.) (2017). Psicología de los Grupos. UNED.",
+    "examenSemana1": "2027-01-29T16:00:00",
+    "examenSemana2": "2027-02-12T09:00:00",
+    "temas": [
+      { "titulo": "Tema 1. Introducción al estudio de los grupos en Psicología Social", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. Desarrollo histórico del estudio de los grupos en Psicología Social", "hijos": [
+          { "titulo": "2.1. El desarrollo inicial" },
+          { "titulo": "2.2. Evolución posterior" },
+          { "titulo": "2.3. Algunas direcciones actuales en el estudio de los grupos" }
+        ]},
+        { "titulo": "3. Definición de grupo", "hijos": [
+          { "titulo": "3.1. Las definiciones de grupo y su convergencia" },
+          { "titulo": "3.2. El debate sobre las categorías y los grupos" },
+          { "titulo": "3.3. El continuo de grupalidad" },
+          { "titulo": "3.4. La percepción de los grupos como entidad" }
+        ]},
+        { "titulo": "4. Algunos tipos de grupo", "hijos": [
+          { "titulo": "4.1. Los grupos primarios" },
+          { "titulo": "4.2. Los grupos de referencia" }
+        ]}
+      ]},
+      { "titulo": "Tema 2. Formación y cohesión grupales", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. La formación de los grupos", "hijos": [
+          { "titulo": "2.1. El origen evolucionista de la formación de grupos" },
+          { "titulo": "2.2. Individualidad y pertenencia grupal: motivaciones básicas en la formación de los grupos" },
+          { "titulo": "2.3. Condiciones necesarias para la formación de un grupo" },
+          { "titulo": "2.4. ¿Por qué y para qué se forman los grupos?" },
+          { "titulo": "2.5. ¿Cómo se forman los grupos?" }
+        ]},
+        { "titulo": "3. La cohesión grupal", "hijos": [
+          { "titulo": "3.1. La cohesión grupal: aspectos teóricos y empíricos" },
+          { "titulo": "3.2. Críticas al concepto tradicional de cohesión" },
+          { "titulo": "3.3. Causas y consecuencias de la cohesión grupal" },
+          { "titulo": "3.4. La cohesión en los distintos tipos de grupos" }
+        ]}
+      ]},
+      { "titulo": "Tema 3. Composición, estructura y procesos de grupo", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. La composición del grupo", "hijos": [
+          { "titulo": "2.1. Los efectos de la composición del grupo" },
+          { "titulo": "2.2. Los correlatos del tamaño del grupo" },
+          { "titulo": "2.3. Los efectos de la diversidad en los grupos" },
+          { "titulo": "2.4. La combinación de los individuos en el grupo" },
+          { "titulo": "2.5. Desarrollos teóricos sobre la composición de los grupos" }
+        ]},
+        { "titulo": "3. La estructura de grupo", "hijos": [
+          { "titulo": "3.1. Elementos de la estructura de grupo", "hijos": [
+            { "titulo": "3.1.1. Normas de grupo" },
+            { "titulo": "3.1.2. Roles de grupo" },
+            { "titulo": "3.1.3. La jerarquía de estatus" }
+          ]}
+        ]}
+      ]},
+      { "titulo": "Tema 4. El liderazgo en los grupos", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. ¿Qué es el liderazgo?" },
+        { "titulo": "3. Enfoques en el estudio del liderazgo", "hijos": [
+          { "titulo": "3.1. Enfoques centrados en el líder" },
+          { "titulo": "3.2. Enfoques centrados en la interacción entre el liderazgo y las variables situacionales: las teorías de la contingencia" },
+          { "titulo": "3.3. Enfoques centrados en los seguidores: las teorías implícitas del liderazgo" },
+          { "titulo": "3.4. Enfoques centrados en la relación entre líder y seguidor" },
+          { "titulo": "3.5. El liderazgo como proceso grupal" }
+        ]},
+        { "titulo": "4. Otros desarrollos en el estudio del liderazgo", "hijos": [
+          { "titulo": "4.1. El liderazgo carismático" },
+          { "titulo": "4.2. El liderazgo transformacional" },
+          { "titulo": "4.3. Liderazgo y género" },
+          { "titulo": "4.4. La Psicología Positiva y el liderazgo" }
+        ]},
+        { "titulo": "5. Consideraciones finales" }
+      ]},
+      { "titulo": "Tema 5. Procesos de influencia en los grupos", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. El conformismo: la influencia mayoritaria", "hijos": [
+          { "titulo": "2.1. Incertidumbre y consenso social" },
+          { "titulo": "2.2. La sorpresa de Asch" },
+          { "titulo": "2.3. Factores que inciden en el conformismo" },
+          { "titulo": "2.4. Explicaciones del conformismo" }
+        ]},
+        { "titulo": "3. Influencia minoritaria: conversión e innovación", "hijos": [
+          { "titulo": "3.1. Explicaciones de la influencia minoritaria" },
+          { "titulo": "3.2. La resistencia a la influencia minoritaria" },
+          { "titulo": "3.3. Naturaleza del pensamiento y descentración" },
+          { "titulo": "3.4. La Teoría de la Elaboración del Conflicto" },
+          { "titulo": "3.5. Influencia minoritaria y categorización social" }
+        ]},
+        { "titulo": "4. La influencia mayoritaria y minoritaria en grupos interactivos" }
+      ]},
+      { "titulo": "Tema 6. Productividad y rendimiento grupal", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. Productividad grupal y trabajo en grupo" },
+        { "titulo": "3. Desempeño de grupo y tipos de tareas grupales", "hijos": [
+          { "titulo": "3.1. Tipos de tareas grupales" }
+        ]},
+        { "titulo": "4. La productividad grupal", "hijos": [
+          { "titulo": "4.1. Modelo de Productividad Grupal" }
+        ]},
+        { "titulo": "5. Efectos del público y de la co-acción en la productividad", "hijos": [
+          { "titulo": "5.1. Procesos explicativos de los efectos del público en la productividad grupal" },
+          { "titulo": "5.2. Procesos explicativos de los efectos de la co-acción en la productividad grupal" }
+        ]},
+        { "titulo": "6. El esfuerzo individual en las tareas colectivas", "hijos": [
+          { "titulo": "6.1. Efectos de la coordinación y la motivación en la productividad grupal" },
+          { "titulo": "6.2. La Teoría de la Equidad de Adams" }
+        ]},
+        { "titulo": "7. Estrategias para evitar las pérdidas motivacionales", "hijos": [
+          { "titulo": "7.1. Compensación social" },
+          { "titulo": "7.2. Efecto Köhler" }
+        ]},
+        { "titulo": "8. Conclusiones finales" }
+      ]},
+      { "titulo": "Tema 7. Relaciones intergrupales: fundamentos teóricos", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. Principales enfoques de las relaciones intergrupales: de lo individual a lo colectivo", "hijos": [
+          { "titulo": "2.1. Los enfoques individuales: desarrollo histórico" },
+          { "titulo": "2.2. Los enfoques intergrupales" }
+        ]},
+        { "titulo": "3. Del favoritismo intergrupal al rechazo" },
+        { "titulo": "4. Afectos y relaciones intergrupales", "hijos": [
+          { "titulo": "4.1. El enfoque intrapsíquico: los efectos del afecto incidental" },
+          { "titulo": "4.2. El enfoque intergrupal: los estudios sobre afecto integral" }
+        ]}
+      ]},
+      { "titulo": "Tema 8. Acción colectiva", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. La acción colectiva como impulsora del cambio social: conceptualización desde la Psicología Social", "hijos": [
+          { "titulo": "2.1. Definición y niveles de análisis" },
+          { "titulo": "2.2. Etapas en el proceso de movilización" },
+          { "titulo": "2.3. El carácter normativo o no-normativo de la protesta" }
+        ]},
+        { "titulo": "3. El renovado interés por las multitudes", "hijos": [
+          { "titulo": "3.1. La multitud como fuente de auto-realización colectiva" },
+          { "titulo": "3.2. Irracionalismo y violencia: el temor hacia las «masas»" },
+          { "titulo": "3.3. El Modelo Elaborado de Identidad Social (ESIM)" }
+        ]},
+        { "titulo": "4. Predicción de la acción colectiva", "hijos": [
+          { "titulo": "4.1. Principales motivaciones para actuar" },
+          { "titulo": "4.2. El Modelo de la Identidad Colectiva Politizada" },
+          { "titulo": "4.3. El Modelo de Identidad Social de la Acción Colectiva (SIMCA)" },
+          { "titulo": "4.4. La (no) movilización desde la Teoría de la Justificación del Sistema" }
+        ]}
+      ]},
+      { "titulo": "Tema 9. La estigmatización social", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. Tipos de estigma" },
+        { "titulo": "3. Características del estigma", "hijos": [
+          { "titulo": "3.1. La visibilidad" },
+          { "titulo": "3.2. La controlabilidad" },
+          { "titulo": "3.3. El riesgo percibido" }
+        ]},
+        { "titulo": "4. La justificación del estigma" },
+        { "titulo": "5. La perspectiva de las personas estigmatizadas", "hijos": [
+          { "titulo": "5.1. La discriminación percibida" },
+          { "titulo": "5.2. La internalización del estigma" },
+          { "titulo": "5.3. La conciencia de estigma" }
+        ]},
+        { "titulo": "6. Los efectos de la estigmatización", "hijos": [
+          { "titulo": "6.1. Efectos del estigma en el plano individual" },
+          { "titulo": "6.2. Efectos del prejuicio y el estigma en el plano grupal" },
+          { "titulo": "6.3. Efectos del prejuicio y el estigma en el plano societal: la exclusión social" }
+        ]},
+        { "titulo": "7. El afrontamiento del estigma", "hijos": [
+          { "titulo": "7.1. Estrategias individuales" },
+          { "titulo": "7.2. Estrategias grupales" },
+          { "titulo": "7.3. Estrategias societales" }
+        ]},
+        { "titulo": "8. Comentarios finales" }
+      ]},
+      { "titulo": "Tema 10. Los grupos de discusión", "hijos": [
+        { "titulo": "1. Introducción" },
+        { "titulo": "2. Evolución histórica de la técnica de los grupos de discusión" },
+        { "titulo": "3. Definición de los grupos de discusión", "hijos": [
+          { "titulo": "3.1. ¿Qué son los grupos de discusión?" },
+          { "titulo": "3.2. ¿Por qué funcionan? Justificación e importancia de la técnica de los grupos de discusión" },
+          { "titulo": "3.3. ¿Cuándo se utilizan? (antes, durante y tras la intervención)" },
+          { "titulo": "3.4. ¿Qué tipo de información se obtiene?" },
+          { "titulo": "3.5. Comparación con otras técnicas" }
+        ]},
+        { "titulo": "4. Características de los grupos de discusión: objetivos, tamaño, composición y procedimientos" },
+        { "titulo": "5. ¿Cómo se llevan a cabo? Investigación utilizando la técnica de los grupos de discusión", "hijos": [
+          { "titulo": "5.1. ¿Qué se puede hacer con los grupos de discusión?" },
+          { "titulo": "5.2. El diseño de la investigación" },
+          { "titulo": "5.3. El moderador: habilidades del moderador y técnicas de moderación. Principios guía para moderar grupos de discusión" },
+          { "titulo": "5.4. Los participantes: selección de los participantes, proceso de convocatoria" },
+          { "titulo": "5.5. Composición del grupo, tamaño, número de grupos con los que realizar la técnica" },
+          { "titulo": "5.6. El análisis de los datos obtenidos con la técnica del grupo de discusión" },
+          { "titulo": "5.7. El informe a realizar sobre los grupos de discusión" }
+        ]},
+        { "titulo": "6. Ventajas y limitaciones de los grupos de discusión", "hijos": [
+          { "titulo": "6.1. Ventajas" },
+          { "titulo": "6.2. Limitaciones" }
+        ]},
+        { "titulo": "7. Ejemplos de contextos y situaciones donde se han utilizado, se utilizan o se puede utilizar la técnica de los grupos de discusión" },
+        { "titulo": "8. Conclusiones finales" }
+      ]}
+    ]
+  }
+]
