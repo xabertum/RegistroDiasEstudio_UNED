@@ -90,12 +90,15 @@ El modo local anterior (Docker/Spring Boot/H2) sigue disponible sin cambios.
 
    Solo añade tu cuenta a la lista. Para revocar el acceso y borrar su progreso:
    `delete from public.study_allowed_users where user_id = 'UUID-DE-TU-USUARIO';`.
-   Para cambiar una contraseña olvidada, usa la administración de usuarios del
-   panel de Supabase; esta aplicación no incluye registro ni recuperación por enlace.
 5. En la configuración de API copia la **Project URL** y la clave **publishable**
    (`sb_publishable_...`). Estas dos referencias son públicas. Nunca uses `service_role`,
    `sb_secret_...`, contraseñas de base de datos ni tokens personales en el frontend.
-6. Configura Site URL con la URL de GitHub Pages indicada arriba.
+6. En Authentication → URL Configuration, configura Site URL con
+   `https://xabertum.github.io/RegistroDiasEstudio_UNED/` y añade esa misma URL a
+   Redirect URLs. Añade también `http://localhost:4200/` para probar en desarrollo.
+   No uses `http://localhost:3000` salvo que realmente sirvas la app en ese puerto.
+   La pantalla de acceso permite solicitar un enlace de recuperación; debe abrirse
+   en la URL de la app para poder establecer la contraseña nueva.
 
 ### 2. Compilar y publicar
 

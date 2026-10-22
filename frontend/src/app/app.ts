@@ -15,8 +15,11 @@ import { AuthService } from './auth.service';
 export class App implements OnInit {
   protected readonly store = inject(EstudioStore);
   protected readonly auth = inject(AuthService);
+  protected authView: 'login' | 'forgot' = 'login';
   protected email = '';
   protected password = '';
+  protected recoveryPassword = '';
+  protected recoveryConfirmation = '';
   protected readonly hoy = new Date();
   protected readonly seleccionadaId = computed(() => this.store.detalle()?.resumen.id ?? null);
 
@@ -39,6 +42,32 @@ export class App implements OnInit {
   protected async login(): Promise<void> {
     await this.auth.login(this.email.trim(), this.password);
     this.password = '';
+  }
+
+  protected async requestPasswordReset(): Promise<void> {
+    await this.auth.requestPasswordReset(this.email.trim());
+  }
+
+  protected async updatePassword(): Promise<void> {
+    if (this.recoveryPassword !== this.recoveryConfirmation) {
+      this.auth.error.set('Las contraseñas no coinciden.');
+      return;
+    }
+    await this.auth.updatePassword(this.recoveryPassword);
+    if (!this.auth.error()) {
+      this.recoveryPassword = '';
+      this.recoveryConfirmation = '';
+    }
+  }
+
+  protected showForgotPassword(): void {
+    this.authView = 'forgot';
+    this.auth.clearPasswordReset();
+  }
+
+  protected showLogin(): void {
+    this.authView = 'login';
+    this.auth.clearPasswordReset();
   }
 
   protected porcentaje(a: AsignaturaResumen): number {
